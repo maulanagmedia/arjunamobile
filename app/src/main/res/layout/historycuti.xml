@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:theme="@style/ToolbarTheme"/>
+
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:background="@drawable/background"
+        android:clipToPadding="true">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:animationCache="false"
+            android:scrollingCache="false"
+            android:smoothScrollbar="true" />
+
+        <TextView
+            android:id="@+id/textdatacuti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rv_main"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:text="Data Cuti"
+            android:visibility="gone"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:id="@+id/judullistview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorTable"
+            android:layout_below="@+id/rv_main"
+            android:orientation="horizontal"
+            android:padding="@dimen/dp10"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.8"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TANGGAL"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textisiviewhistory" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ALASAN"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textisiviewhistory" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.2"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="STATUS"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textisiviewhistory" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lvCuti"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/judullistview"
+            android:background="@color/white"
+            android:fitsSystemWindows="true"
+            android:scrollbars="none" />
+    </RelativeLayout>
+
+</RelativeLayout>

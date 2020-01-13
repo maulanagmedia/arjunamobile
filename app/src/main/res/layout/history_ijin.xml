@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimaryDark">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:theme="@style/ToolbarTheme"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/grey">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layout_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_header"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/header_bottom_padding">
+
+                <RelativeLayout
+                    android:id="@+id/layoutmenudropdown"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginEnd="@dimen/dp30"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_marginTop="@dimen/dp30"
+                    android:layout_gravity="center"
+                    android:background="@drawable/style_dropdown">
+
+                    <Spinner
+                        android:id="@+id/menudropdownHistoryIjin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="70dp"
+                        android:alpha="0.5"
+                        android:textAlignment="center"
+                        android:theme="@style/ThemeOverlay.AppCompat.Light"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutTglMulaiHistoryIjin"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginEnd="@dimen/dp30"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp25"
+                    android:background="@drawable/style_calender">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="30dp">
+
+                        <TextView
+                            android:id="@+id/textTglMulaiHistoryIjin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Tanggal Mulai"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp16" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/widthheighttombolperiode"
+                        android:layout_height="@dimen/widthheighttombolperiode"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="30dp"
+                        android:src="@drawable/date_white" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutTglSelesaiHistoryIjin"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginEnd="@dimen/dp30"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp25"
+                    android:background="@drawable/style_calender">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="30dp">
+
+                        <TextView
+                            android:id="@+id/textTglSelesaiHistoryIjin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Tanggal Selesai"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp16" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/widthheighttombolperiode"
+                        android:layout_height="@dimen/widthheighttombolperiode"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="30dp"
+                        android:src="@drawable/date_white" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutkirimhistoryijin"
+                    android:layout_width="@dimen/widthlayouttombolproses"
+                    android:layout_height="@dimen/heightlayouttombolproses"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp25"
+                    android:layout_marginBottom="@dimen/dp20"
+                    android:background="@drawable/style_button_proses"
+                    android:clickable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Proses"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/textproses"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/layoutListPulangAwal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp20"
+                    app:cardCornerRadius="@dimen/dp10"
+                    app:strokeColor="@color/colorTable"
+                    app:strokeWidth="@dimen/dp1"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/judulHistoryIjinPulangAwal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#FFFFFF"
+                            android:orientation="horizontal"
+                            android:weightSum="12">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:background="@color/colorTable"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="5dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/textjam"
+                                    android:layout_centerInParent="true"
+                                    android:text="Tanggal"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="3"
+                                android:background="@color/colorTable">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Jam"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="3"
+                                android:background="@color/colorTable">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Alasan"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/dp1"
+                                android:layout_weight="3"
+                                android:background="@color/colorTable">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Status"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <ListView
+                            android:id="@+id/listHistoryIjinPulangAwal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:layout_below="@+id/judulHistoryIjinPulangAwal"
+                            android:nestedScrollingEnabled="true"
+                            android:scrollbars="none" />
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/layoutListKeluarKantor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp20"
+                    app:cardCornerRadius="@dimen/dp10"
+                    app:strokeColor="@color/colorTable"
+                    app:strokeWidth="@dimen/dp1"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/judulHistoryIjinKeluarKantor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#FFFFFF"
+                            android:orientation="horizontal"
+                            android:weightSum="12">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2.5"
+                                android:background="@color/colorTable"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="5dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Tanggal"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="3.5"
+                                android:background="@color/colorTable">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/textjam2"
+                                    android:layout_centerInParent="true"
+                                    android:text="Waktu"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="3"
+                                android:background="@color/colorTable">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Alasan"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="3"
+                                android:background="@color/colorTable">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Status"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <ListView
+                            android:id="@+id/listHistoryIjinKeluarKantor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:nestedScrollingEnabled="true"
+                            android:scrollbars="none"
+                            android:layout_below="@+id/judulHistoryIjinKeluarKantor"/>
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

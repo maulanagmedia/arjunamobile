@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:background="@color/white"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:id="@+id/layoutijin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/layout_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_header">
+
+                <RelativeLayout
+                    android:id="@+id/layouthistoryijin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp20"
+                    android:layout_marginBottom="@dimen/dp15">
+
+                    <TextView
+                        android:id="@+id/ijin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp30"
+                        android:clickable="true"
+                        android:text="Lihat riwayat ijin"
+                        android:background="@drawable/style_history"
+                        android:padding="@dimen/dp10"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/sp12" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutMenuDropdownJenisIJin"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginEnd="@dimen/dp30"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/style_dropdown">
+
+                    <Spinner
+                        android:id="@+id/menuDropdownJenisIjin"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAlignment="center"
+                        android:theme="@style/ThemeOverlay.AppCompat.Light" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutGanti2Ijin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginEnd="@dimen/dp30"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/layouttglmulaiijin"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/dp25"
+                        android:layout_height="@dimen/heightlayoutperiode"
+                        android:visibility="gone"
+                        android:background="@drawable/style_calender">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="30dp">
+
+                            <TextView
+                                android:id="@+id/texttglmulaiijin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Tanggal Mulai"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/textperiode" />
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:layout_width="@dimen/widthheighttombolperiode"
+                            android:layout_height="@dimen/widthheighttombolperiode"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+                            android:src="@drawable/date_white" />
+                    </RelativeLayout>
+
+                    <!--<RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/heightlayoutperiode"
+                        android:layout_below="@+id/layoutMenuDropdownJenisIJin"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/dp25"
+                        android:background="@drawable/style_dropdown"
+                        android:visibility="invisible"
+                        tools:ignore="NotSibling">
+
+                        <Spinner
+                            android:id="@+id/menuDropdownApproval"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="70dp"
+                            android:textAlignment="center"
+                            android:theme="@style/ThemeOverlay.AppCompat.Light" />
+                    </RelativeLayout>-->
+
+                    <RelativeLayout
+                        android:id="@+id/layoutTimePixer"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/heightlayoutperiode"
+                        android:layout_below="@+id/layouttglmulaiijin"
+                        android:layout_marginTop="@dimen/dp25"
+                        android:background="@drawable/style_calender"
+                        android:visibility="gone"
+                        android:clickable="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="30dp">
+
+                            <TextView
+                                android:id="@+id/textTimePixer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Jam"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp14" />
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:layout_width="@dimen/widthheighttombolperiode"
+                            android:layout_height="@dimen/widthheighttombolperiode"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/dp30"
+                            android:src="@drawable/time_white"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/layoutUploadFile"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/heightlayoutperiode"
+                        android:layout_below="@+id/layoutTimePixer"
+                        android:layout_marginTop="@dimen/dp25"
+                        android:visibility="gone"
+                        android:background="@drawable/style_calender"
+                        android:clickable="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="30dp">
+
+                            <TextView
+                                android:id="@+id/txt_file"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Upload File"
+                                android:ellipsize="start"
+                                android:maxLength="25"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp14" />
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/img_upload"
+                            android:layout_width="@dimen/widthheighttombolperiode"
+                            android:layout_height="@dimen/widthheighttombolperiode"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/dp30"
+                            android:src="@drawable/icon_upload"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/layoutKeluarKantor"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/heightlayoutperiode"
+                        android:layout_below="@+id/layouttglmulaiijin"
+                        android:layout_marginTop="@dimen/dp25"
+                        android:background="@drawable/style_calender"
+                        android:visibility="gone"
+                        android:clickable="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="30dp">
+
+                            <TextView
+                                android:id="@+id/textKeluarKantor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Jumlah Menit"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp14" />
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:layout_width="@dimen/widthheighttombolperiode"
+                            android:layout_height="@dimen/widthheighttombolperiode"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/dp30"
+                            android:src="@drawable/time_white"/>
+                    </RelativeLayout>
+
+                    <!--<RelativeLayout
+                        android:id="@+id/layoutInputMulaiKeluarKantor"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/heightlayoutperiode"
+                        android:layout_below="@+id/layouttglmulaiijin"
+                        android:layout_marginTop="@dimen/dp25"
+                        android:background="@drawable/style_calender"
+                        android:clickable="true"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="30dp">
+
+                            <TextView
+                                android:id="@+id/textMulai"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Jam Mulai"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp14" />
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:layout_width="@dimen/widthheighttombolperiode"
+                            android:layout_height="@dimen/widthheighttombolperiode"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/dp30"
+                            android:src="@drawable/date_white" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/layoutInputSelesaiKeluarKantor"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/heightlayoutperiode"
+                        android:layout_below="@+id/layoutInputMulaiKeluarKantor"
+                        android:layout_marginTop="@dimen/dp25"
+                        android:background="@drawable/style_calender"
+                        android:clickable="true"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/dp30">
+
+                            <TextView
+                                android:id="@+id/textSelesai"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Jam Selesai"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp14" />
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:layout_width="@dimen/widthheighttombolperiode"
+                            android:layout_height="@dimen/widthheighttombolperiode"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="30dp"
+                            android:src="@drawable/date_white" />
+                    </RelativeLayout>-->
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/keterangan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_header"
+                android:text="Tulis alasan ijin"
+                android:layout_marginBottom="@dimen/dp10"
+                android:layout_alignStart="@id/edit_text_keterangan_historyijin"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp14" />
+
+            <EditText
+                android:id="@+id/edit_text_keterangan_historyijin"
+                android:layout_width="@dimen/widthedittext"
+                android:layout_height="@dimen/heightedittext"
+                android:layout_below="@+id/keterangan"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/style_edittext_box"
+                android:gravity="start"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:padding="@dimen/dp10"
+                android:textCursorDrawable="@null" />
+
+            <RelativeLayout
+                android:id="@+id/layoutkirimhistoryijin"
+                android:layout_width="@dimen/widthlayouttombolproses"
+                android:layout_height="@dimen/heightlayouttombolproses"
+                android:layout_below="@+id/edit_text_keterangan_historyijin"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/style_button_proses"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Kirim"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/sp14"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

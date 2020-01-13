@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "285357084556",
+    "firebase_url": "https://absensi-psp.firebaseio.com",
+    "project_id": "absensi-psp",
+    "storage_bucket": "absensi-psp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285357084556:android:285a7dbcf32c0d8a",
+        "android_client_info": {
+          "package_name": "gmedia.net.id.absensipsp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285357084556-t565smbg6qr2ar31p0qs9dphdcvbo2df.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "gmedia.net.id.absensipsp",
+            "certificate_hash": "358c87ff64a743f6273cc7101f5755d490d1f98c"
+          }
+        },
+        {
+          "client_id": "285357084556-1uhqidm35tp0f0bbm0ncumd8b505oo1n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-8HGAAlPbymISiA0IlvjPpwDlQX5W82Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285357084556-1uhqidm35tp0f0bbm0ncumd8b505oo1n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:285357084556:android:59c0eeb8be63e438",
+        "android_client_info": {
+          "package_name": "id.net.gmedia.absensipsp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "285357084556-q8rv1ulsrhmfrn5m1p27sr8n2pft3l0a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.net.gmedia.absensipsp",
+            "certificate_hash": "358c87ff64a743f6273cc7101f5755d490d1f98c"
+          }
+        },
+        {
+          "client_id": "285357084556-1uhqidm35tp0f0bbm0ncumd8b505oo1n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-8HGAAlPbymISiA0IlvjPpwDlQX5W82Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "285357084556-1uhqidm35tp0f0bbm0ncumd8b505oo1n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

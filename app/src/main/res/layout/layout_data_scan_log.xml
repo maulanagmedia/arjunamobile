@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutdatarekapabsensi"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:baselineAligned="false"
+    android:background="@color/white">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp20"
+        app:cardCornerRadius="@dimen/dp10"
+        app:strokeColor="@color/colorTable"
+        app:strokeWidth="@dimen/dp1">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/judulListDetailJadwal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp30"
+                android:background="#FFFFFF"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/layoutshiftjadwal"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:background="@color/colorTable">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Tanggal"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/text" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutjammasukjadwal"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="4"
+                    android:background="@color/colorTable">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="Jam"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/text" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <!--<RelativeLayout
+                    android:id="@+id/layoutjamkeluarjadwal"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="4"
+                    android:background="@color/colorPrimary">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="Type"
+                            android:textColor="#FFFFFF"
+                            android:textSize="@dimen/text" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>-->
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/listScanLog"
+                android:layout_below="@+id/judulListDetailJadwal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="true"
+                android:background="@color/white"
+                android:scrollbars="none" />
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

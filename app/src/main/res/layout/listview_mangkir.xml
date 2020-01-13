@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:id="@+id/layout_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:layout_marginBottom="@dimen/dp10"
+        android:layout_marginStart="@dimen/dp20"
+        android:layout_marginEnd="@dimen/dp20"
+        app:cardCornerRadius="@dimen/dp10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="@dimen/dp20">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/img_tanggal"
+                    android:layout_width="@dimen/tiny_icon_size"
+                    android:layout_height="@dimen/tiny_icon_size"
+                    android:src="@drawable/drawer_kalender"
+                    android:layout_marginEnd="@dimen/dp10"/>
+
+                <TextView
+                    android:id="@+id/lbl_tanggal"
+                    android:layout_toEndOf="@id/img_tanggal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/sp14"/>
+
+                <TextView
+                    android:id="@+id/txt_hari_tanggal"
+                    android:layout_below="@id/lbl_tanggal"
+                    android:layout_toEndOf="@id/img_tanggal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp15">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/img_jam_masuk"
+                        android:layout_width="@dimen/tiny_icon_size"
+                        android:layout_height="@dimen/tiny_icon_size"
+                        android:src="@drawable/time_blue"
+                        android:layout_marginEnd="@dimen/dp10"/>
+
+                    <TextView
+                        android:id="@+id/lbl_jam_masuk"
+                        android:layout_toEndOf="@id/img_jam_masuk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Jam Masuk"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/sp14"/>
+
+                    <TextView
+                        android:id="@+id/txt_jam_masuk"
+                        android:layout_below="@id/lbl_jam_masuk"
+                        android:layout_toEndOf="@id/img_jam_masuk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp14"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/img_jam_pulang"
+                        android:layout_width="@dimen/tiny_icon_size"
+                        android:layout_height="@dimen/tiny_icon_size"
+                        android:src="@drawable/time_blue"
+                        android:layout_marginEnd="@dimen/dp10"/>
+
+                    <TextView
+                        android:id="@+id/lbl_jam_pulang"
+                        android:layout_toEndOf="@id/img_jam_pulang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Jam Pulang"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/sp14"/>
+
+                    <TextView
+                        android:id="@+id/txt_jam_pulang"
+                        android:layout_below="@id/lbl_jam_pulang"
+                        android:layout_toEndOf="@id/img_jam_pulang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp14"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp15">
+
+                <ImageView
+                    android:id="@+id/img_keterangan"
+                    android:layout_width="@dimen/tiny_icon_size"
+                    android:layout_height="@dimen/tiny_icon_size"
+                    android:src="@drawable/drawer_kalender"
+                    android:layout_marginEnd="@dimen/dp10"/>
+
+                <TextView
+                    android:id="@+id/lbl_keterangan"
+                    android:layout_toEndOf="@id/img_keterangan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tanggal"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/sp14"/>
+
+                <TextView
+                    android:id="@+id/txt_keterangan"
+                    android:layout_below="@id/lbl_keterangan"
+                    android:layout_toEndOf="@id/img_keterangan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

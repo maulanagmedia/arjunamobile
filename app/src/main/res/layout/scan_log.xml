@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        android:layout_marginTop="?android:actionBarSize"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_header"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/btnTglScanLog"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_marginTop="@dimen/dp30"
+                    android:layout_marginStart="@dimen/dp30"
+                    android:layout_marginEnd="@dimen/dp30"
+                    android:background="@drawable/style_calender">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="30dp">
+
+                        <TextView
+                            android:id="@+id/tglScanLog"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Silahkan Isi Tanggal"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp16" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="@dimen/widthheighttombolperiode"
+                        android:layout_height="@dimen/widthheighttombolperiode"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="30dp"
+                        android:src="@drawable/date_white" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btnProsesScanLog"
+                    android:layout_width="@dimen/widthlayouttombolproses"
+                    android:layout_height="@dimen/heightlayouttombolproses"
+                    android:layout_marginTop="@dimen/dp30"
+                    android:background="@drawable/style_button_proses"
+                    android:clickable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Proses"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/sp14" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/dataScanLog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+
+                    <include layout="@layout/layout_data_scan_log" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_kosong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:padding="@dimen/dp20"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/kosong_image_size"
+                        android:layout_height="@dimen/kosong_image_size"
+                        android:src="@drawable/kosong_scanlog"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:textSize="@dimen/sp20"
+                        android:textColor="@color/black"
+                        android:text="Tidak ada data"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/sp16"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:text="Anda belum melakukan\nabsensi pada tanggal ini"/>
+                </LinearLayout>
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

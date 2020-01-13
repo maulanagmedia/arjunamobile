@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:theme="@style/ToolbarTheme"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layout_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_header"
+                android:paddingBottom="@dimen/header_bottom_padding"
+                android:paddingStart="@dimen/dp20"
+                android:paddingEnd="@dimen/dp20"
+                android:paddingTop="@dimen/dp20"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textPeriode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Periode"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp16" />
+
+                    <TextView
+                        android:id="@+id/tanggalPeriode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp20"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:baselineAligned="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:padding="@dimen/dp10">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/img_total_hari"
+                            android:layout_width="@dimen/dp15"
+                            android:layout_height="@dimen/dp15"
+                            android:layout_margin="@dimen/dp10"
+                            android:src="@drawable/date_white"/>
+
+                        <TextView
+                            android:id="@+id/textTotalHari"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/img_total_hari"
+                            android:text="Total Hari"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp14" />
+
+                        <TextView
+                            android:id="@+id/totalHari"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_below="@id/textTotalHari"
+                            android:layout_alignStart="@id/textTotalHari"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp14" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/img_total_menit"
+                            android:layout_width="@dimen/dp15"
+                            android:layout_height="@dimen/dp15"
+                            android:layout_margin="@dimen/dp10"
+                            android:src="@drawable/date_white"/>
+
+                        <TextView
+                            android:id="@+id/textTotalMenit"
+                            android:layout_width="match_parent"
+                            android:layout_toEndOf="@id/img_total_menit"
+                            android:layout_height="wrap_content"
+                            android:text="Total Menit"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp14" />
+
+                        <TextView
+                            android:id="@+id/totalMenit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textTotalMenit"
+                            android:layout_alignStart="@id/textTotalMenit"
+                            android:textColor="@color/white"
+                            android:gravity="center"
+                            android:textSize="@dimen/sp14" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/layout_detail"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp20"
+                    android:layout_marginEnd="@dimen/dp20"
+                    android:layout_marginBottom="@dimen/dp20"
+                    app:cardCornerRadius="@dimen/dp10"
+                    app:strokeColor="@color/colorTable"
+                    app:strokeWidth="@dimen/dp1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/judulListRekapAbsensi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:id="@+id/layoutharitanggal"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:background="@color/colorTable"
+                                android:paddingBottom="5dp"
+                                android:paddingLeft="@dimen/paddingharitanggal"
+                                android:paddingRight="@dimen/paddingharitanggal"
+                                android:paddingTop="5dp">
+
+                                <TextView
+                                    android:id="@+id/texthari"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="Hari /"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/texthari"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="Tanggal"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/layoutjammasuk"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="1dp"
+                                android:layout_weight="2.5"
+                                android:background="@color/colorTable"
+                                android:paddingBottom="5dp"
+                                android:paddingLeft="@dimen/paddingjam"
+                                android:paddingRight="@dimen/paddingjam"
+                                android:paddingTop="5dp">
+
+                                <TextView
+                                    android:id="@+id/textjam"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="Jam"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/textjam"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="Masuk"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/layoutjamkeluar"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="1dp"
+                                android:layout_weight="2.5"
+                                android:background="@color/colorTable"
+                                android:paddingBottom="5dp"
+                                android:paddingLeft="@dimen/paddingjam"
+                                android:paddingRight="@dimen/paddingjam"
+                                android:paddingTop="5dp">
+
+                                <TextView
+                                    android:id="@+id/textjam2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="Scan"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/textjam2"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="Masuk"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="1dp"
+                                android:layout_weight="3"
+                                android:background="@color/colorTable"
+                                android:paddingBottom="4.5dp"
+                                android:paddingLeft="@dimen/paddingjam"
+                                android:paddingRight="@dimen/paddingjam"
+                                android:paddingTop="4.5dp">
+
+                                <TextView
+                                    android:id="@+id/texttelat"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="Telat"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/texttelat"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="(menit)"
+                                    android:textColor="#FFFFFF" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <ListView
+                            android:id="@+id/listTotalTerlambat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:id="@+id/layout_kosong"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:padding="@dimen/dp20"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/kosong_image_size"
+                        android:layout_height="@dimen/kosong_image_size"
+                        android:src="@drawable/kosong_totalterlambat"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="@dimen/dp10"
+                        android:textSize="@dimen/sp20"
+                        android:textColor="@color/black"
+                        android:text="Tidak pernah terlambat"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/sp16"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:text="Selamat anda tidak pernah terlambat!"/>
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
