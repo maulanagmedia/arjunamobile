@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity
 
     public static boolean dashboard_fragment_active = true;
     public DrawerLayout drawer;
-    public TextView title;
+    public TextView title, tvNik;
     private EditText passLama, passBaru, rePassBaru;
     private EditText passLamaEditPin, passBaruEditPin, rePassBaruEditPin;
     private Boolean klikToVisiblePassLama = true;
@@ -173,6 +173,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         img_profil = findViewById(R.id.img_profil);
         title = findViewById(id.net.gmedia.absensipsp.R.id.title);
+        tvNik = (TextView) findViewById(R.id.tv_nik);
         RelativeLayout buttonDrawer = findViewById(id.net.gmedia.absensipsp.R.id.drawer_button);
         buttonDrawer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -368,6 +369,8 @@ public class MainActivity extends AppCompatActivity
         if (android.os.Build.VERSION.SDK_INT > 25) {
             statusCheck();
         }
+
+        ((DashboardBaru)fragment).dashboard();
     }
 
     private void checkVersion() {
@@ -816,6 +819,7 @@ public class MainActivity extends AppCompatActivity
                                 nama.setText(biodata.getString("nama"));
                                 TextView nip = findViewById(id.net.gmedia.absensipsp.R.id.nikDrawer);
                                 nip.setText(biodata.getString("nip"));
+                                tvNik.setText(biodata.getString("nip"));
                             } else {
                                 Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
                             }
@@ -961,7 +965,6 @@ public class MainActivity extends AppCompatActivity
         if(requestCode == PERMISSION_PHONE_STATE){
             if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
                 if(fragment instanceof DashboardBaru){
-                    ((DashboardBaru)fragment).dashboard();
                     ((DashboardBaru)fragment).newsDashboard();
                 }
             }

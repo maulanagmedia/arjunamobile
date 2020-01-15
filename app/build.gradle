@@ -4,7 +4,7 @@ apply plugin: 'com.google.gms.google-services'
 android {
     signingConfigs {
         release {
-            storeFile file('D:\\GMEDIA\\Keystore\\keystore_gmedia.jks')
+            storeFile file('/Users/gmediaiosdev2/Library/Mobile Documents/com~apple~CloudDocs/Documents/Android/AndroidProject/keystore_gmedia.jks')
             storePassword 'berhasil'
             keyAlias = 'keystore_gmedia'
             keyPassword 'berhasil'
@@ -15,7 +15,7 @@ android {
         applicationId "id.net.gmedia.absensipsp"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 4
+        versionCode 6
         versionName "1.2.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
