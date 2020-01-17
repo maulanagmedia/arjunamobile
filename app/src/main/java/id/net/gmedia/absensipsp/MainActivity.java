@@ -370,7 +370,7 @@ public class MainActivity extends AppCompatActivity
             statusCheck();
         }
 
-        ((DashboardBaru)fragment).dashboard();
+        if(fragment instanceof DashboardBaru) ((DashboardBaru)fragment).dashboard();
     }
 
     private void checkVersion() {
