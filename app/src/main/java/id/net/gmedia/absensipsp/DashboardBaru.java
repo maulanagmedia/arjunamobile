@@ -140,18 +140,18 @@ public class DashboardBaru extends Fragment {
         });
         slidingPaneLayout.setPanelHeight(device_TotalHeight/6);
 
-        final Button checkin = view.findViewById(R.id.tombolCheckinDashboard);
+        /*final Button checkin = view.findViewById(R.id.tombolCheckinDashboard);
         checkin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*fragment = new Checkin();
+                *//*fragment = new Checkin();
                 bundle.putString("Check", "in");
                 fragment.setArguments(bundle);
                 callFragment(fragment);
                 MainActivity.title.setText("Absen");
                 MainActivity.title.setTypeface(Typeface.createFromAsset(activity.getAssets(), "fonts/Helvetica-Bold.otf"));
                 MainActivity.dashboard_fragment_active = false;
-                tombol = true;*/
+                tombol = true;*//*
 
                 Toast.makeText(activity, "Coming Soon", Toast.LENGTH_SHORT).show();
             }
@@ -160,18 +160,18 @@ public class DashboardBaru extends Fragment {
         checkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*fragment = new Checkin();
+                *//*fragment = new Checkin();
                 bundle.putString("Check", "out");
                 fragment.setArguments(bundle);
                 callFragment(fragment);
                 MainActivity.title.setText("Absen");
                 MainActivity.title.setTypeface(Typeface.createFromAsset(DashboardBaru.this.getActivity().getAssets(), "fonts/Helvetica-Bold.otf"));
                 MainActivity.dashboard_fragment_active = false;
-                tombol = false;*/
+                tombol = false;*//*
 
                 Toast.makeText(activity, "Coming Soon", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
         RelativeLayout menuSisaCuti = view.findViewById(R.id.menuSisaCuti);
         menuSisaCuti.setOnClickListener(new View.OnClickListener() {
@@ -224,7 +224,6 @@ public class DashboardBaru extends Fragment {
                     new String[]{Manifest.permission.READ_PHONE_STATE},
                     ((MainActivity)activity).PERMISSION_PHONE_STATE);
         }
-
         return view;
     }
 

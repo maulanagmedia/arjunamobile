@@ -46,6 +46,7 @@ public class SlipGaji extends Fragment {
     private AppCompatSpinner spn_bulan, spn_tahun;
     private String[] bulan = new String[]{"Pilih Bulan : ", "Januari", "Februari", "Maret", "April", "Mei", "Juni",
             "Juli", "Agustus", "September", "Oktober", "November", "Desember"};
+
     private String[] tahun = new String[]
             {
                     "Pilih Tahun : ",
@@ -73,8 +74,8 @@ public class SlipGaji extends Fragment {
         spn_tahun = v.findViewById(R.id.spn_tahun);
         layout_detail = v.findViewById(R.id.layout_detail);
         layout_kosong = v.findViewById(R.id.layout_kosong);
-        RecyclerView rv_gaji = v.findViewById(R.id.rv_gaji);
 
+        RecyclerView rv_gaji = v.findViewById(R.id.rv_gaji);
         rv_gaji.setItemAnimator(new DefaultItemAnimator());
         rv_gaji.setLayoutManager(new LinearLayoutManager(context));
         adapter = new SlipGajiAdapter(context, listHeader, detailGaji);
