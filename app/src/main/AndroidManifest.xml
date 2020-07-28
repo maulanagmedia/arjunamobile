@@ -4,6 +4,9 @@
     package="id.net.gmedia.absensipsp">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name = "android.permission.INTERNET" />
+    <uses-permission android:name = "android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name = "android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".MontserratApp"
@@ -14,25 +17,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".Login"
+        <activity android:name=".ActivityPDFLink"></activity>
+        <activity
+            android:name=".Login"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".HistoryKlarifikasi"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".Register"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity
-            android:name=".ActifityNotfif"
-           />
+        <activity android:name=".ActifityNotfif" />
         <activity
             android:name=".SplashScreen"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Design.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -63,6 +63,8 @@ public class Constant {
     public static String urlMasterKlarifikasi = BaseUrl + "list_tipe_klarifikasi";
     public static  String urlNotifikasi = BaseUrl + "notification_list";
     public static  String urlFilterLembur = BaseUrl + "money_overtime";
+    public static  String urlDwonloadfile = "https://office.putmasaripratama.co.id/arjuna/gaji/slip_gaji_nip_mobile";
+
 
     public static Map<String, String> getTokenHeader(Context context){
         SessionManager session = new SessionManager(context);

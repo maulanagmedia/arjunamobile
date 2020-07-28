@@ -95,7 +95,6 @@ public class ScanLog extends Fragment {
                 prepareDataScanLog();
             }
         });
-
         return view;
     }
 
@@ -133,7 +132,6 @@ public class ScanLog extends Fragment {
                                             isi.getString("jam")
                                     ));
                                 }
-
                                 if(response.length() > 0){
                                     listView.setAdapter(null);
                                     adapter = new ListAdapterScanLog(context, scanLog);
@@ -156,7 +154,6 @@ public class ScanLog extends Fragment {
                     @Override
                     public void onError(String result) {
                         dialog.dismiss();
-
                         Toast.makeText(getContext(), "Terjadi Kesalahan", Toast.LENGTH_LONG).show();
                         Log.e(Constant.TAG, result);
                     }
