@@ -138,7 +138,7 @@ public class DashboardBaru extends Fragment {
                 slidingPaneLayout.setPanelState(SlidingUpPanelLayout.PanelState.COLLAPSED);
             }
         });
-        slidingPaneLayout.setPanelHeight(device_TotalHeight/6);
+        slidingPaneLayout.setPanelHeight(device_TotalHeight*3/10);
 
         /*final Button checkin = view.findViewById(R.id.tombolCheckinDashboard);
         checkin.setOnClickListener(new View.OnClickListener() {

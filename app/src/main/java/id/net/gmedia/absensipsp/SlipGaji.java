@@ -347,6 +347,9 @@ public class SlipGaji extends Fragment {
         spn_bulan.setAdapter(adapter_bulan);
         spn_tahun.setAdapter(adapter_tahun);
 
+        spn_bulan.setSelection(java.util.Calendar.getInstance().get(Calendar.MONTH) + 1);
+        spn_tahun.setSelection(2);
+
         spn_bulan.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

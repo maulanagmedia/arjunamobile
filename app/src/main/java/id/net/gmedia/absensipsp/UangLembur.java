@@ -97,8 +97,9 @@ public class UangLembur extends Fragment {
         Rvlmbr = view.findViewById(R.id.rv_lembur);
         dataAda = view.findViewById(R.id.layout_detail);
         layout_kosong = view.findViewById(R.id.layout_kosong);
+        listView.setVisibility(View.GONE);
         initSpinner();
-        parsingdata();
+        //parsingdata();
 
         /*RecyclerView rv_lembur = view.findViewById(R.id.rv_lembur);
         rv_lembur.setItemAnimator(new DefaultItemAnimator());
@@ -217,6 +218,9 @@ public class UangLembur extends Fragment {
         adapter_tahun.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spn_bulan.setAdapter(adapter_bulan);
         spn_tahun.setAdapter(adapter_tahun);
+
+        spn_bulan.setSelection(java.util.Calendar.getInstance().get(Calendar.MONTH) + 1);
+        spn_tahun.setSelection(2);
 
         spn_bulan.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -388,7 +392,10 @@ public class UangLembur extends Fragment {
 
                     @Override
                     public void onSuccess(String result) {
+
                         child = new HashMap<>();
+                        listlembur = new ArrayList<>();
+                        double totalLembur = 0;
 
                         try {
                             JSONObject object = new JSONObject(result);
@@ -402,6 +409,8 @@ public class UangLembur extends Fragment {
 
                                     JSONArray cilikan = objt.getJSONArray("detail");
                                     if (cilikan.length() > 0) {
+                                        dataAda.setVisibility(View.GONE);
+
                                         for (int a = 0; a < cilikan.length(); a++) {
                                             JSONObject isicilikan = cilikan.getJSONObject(a);
                                             listlembur.add(new ModelFilterLembur(
@@ -409,13 +418,8 @@ public class UangLembur extends Fragment {
                                                     isicilikan.getString("nominal")
                                             ));
 
-                                            Rvlmbr.setAdapter(null);
-                                            lvLembur = new ListAdapterFilterLembur(context, lembur);
-                                            Rvlmbr.setAdapter(lvLembur);
-                                            lvLembur.notifyDataSetChanged();
-                                            dataAda.setVisibility(View.VISIBLE);
+                                            totalLembur += parseNullDouble(isicilikan.getString("nominal"));
                                         }
-
                                     } else{
                                         layout_kosong.setVisibility(View.VISIBLE);
 
@@ -428,7 +432,13 @@ public class UangLembur extends Fragment {
                             Log.e(Constant.TAG, e.getMessage());
                         }
 
+                        Rvlmbr.setAdapter(null);
+                        lvLembur = new ListAdapterFilterLembur(context, listlembur);
+                        Rvlmbr.setAdapter(lvLembur);
+
                         dialog.dismiss();
+                        totalan = doubleToStringFull(totalLembur);
+                        jumlah.setText(ChangeToRupiahFormat(totalan));
                     }
 
                     @Override

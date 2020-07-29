@@ -15,14 +15,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="5">
+            android:layout_weight="6">
 
             <com.sothree.slidinguppanel.SlidingUpPanelLayout
                 android:id="@+id/sliding"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="bottom"
-                sothree:umanoPanelHeight="300dp"
+                sothree:umanoPanelHeight="100dp"
                 sothree:umanoShadowHeight="0dp">
 
                 <LinearLayout
@@ -188,7 +188,7 @@
                                             android:textSize="9sp"
                                             android:layout_margin="@dimen/dp10"
                                             android:layout_alignParentBottom="true"
-                                            android:text="Telat lebih 6x akan terbit sp, mangkir 3x terbit sp"/>
+                                            android:text="Telat lebih 6x akan terbit sp"/>
                                     </RelativeLayout>
                                 </RelativeLayout>
                             </LinearLayout>
@@ -210,29 +210,39 @@
                                     android:background="@drawable/style_dashboard_box">
 
                                     <RelativeLayout
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_centerInParent="true">
-
-                                        <TextView
-                                            android:id="@+id/uangMakanDashboard"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_centerHorizontal="true"
-                                            android:textColor="@color/white"
-                                            android:textSize="13dp" />
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
 
                                         <TextView
                                             android:id="@+id/contentUangMakanDashboard"
-                                            android:layout_width="wrap_content"
+                                            android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:layout_below="@+id/uangMakanDashboard"
-                                            android:layout_centerHorizontal="true"
                                             android:textColor="@color/white"
+                                            android:layout_centerInParent="true"
                                             android:textSize="30dp"
+                                            android:gravity="center"
                                             android:textStyle="bold" />
-                                    </RelativeLayout>
 
+                                        <TextView
+                                            android:id="@+id/uangMakanDashboard"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:layout_above="@id/contentUangMakanDashboard"
+                                            android:textColor="@color/white"
+                                            android:text=""
+                                            android:textSize="13dp"/>
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:textColor="@color/white"
+                                            android:gravity="center"
+                                            android:textSize="9sp"
+                                            android:layout_margin="@dimen/dp10"
+                                            android:layout_alignParentBottom="true"
+                                            android:text="Mangkir 3x terbit sp"/>
+                                    </RelativeLayout>
                                 </RelativeLayout>
                             </LinearLayout>
                         </LinearLayout>
