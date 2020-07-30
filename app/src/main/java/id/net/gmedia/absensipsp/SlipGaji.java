@@ -153,13 +153,13 @@ public class SlipGaji extends Fragment {
 
     private void dwonloadPDF(){
         String parameter = String.format(Locale.getDefault(), "?nip=%s&bulan=%s&tahun=%s", sessionManager.getNip(), spn_bulan.getSelectedItemPosition(), spn_tahun.getSelectedItem());
-        new ApiVolley(context, new JSONObject(), "GET", Constant.urlDwonloadfile+parameter, message, message, 1, new ApiVolley.VolleyCallback() {
+        new ApiVolley(context, new JSONObject(), "GET", Constant.urlDwonloadfile+parameter, message, message, 0, new ApiVolley.VolleyCallback() {
             @Override
             public void onSuccess(String result) {
                 try {
                     JSONObject object = new JSONObject(result);
                     String status = object.getJSONObject("metadata").getString("status");
-                    message = object.getJSONObject("metadata").getString("message");
+                    message = object.getJSONObject("metadata" ).getString("message");
 
                     if (Integer.parseInt(status)==1){
                         JSONObject ob = object.getJSONObject("response");
@@ -202,7 +202,7 @@ public class SlipGaji extends Fragment {
                             if(status == 1){
                                 listHeader.clear();
                                 detailGaji.clear();
-
+                                btn_dwonload.setVisibility(View.VISIBLE);
                                 JSONArray slip = response.getJSONArray("response");
                                 if(slip.length() > 0){
                                     JSONObject d = slip.getJSONObject(0);
@@ -249,9 +249,11 @@ public class SlipGaji extends Fragment {
                                 }
                                 else{
                                     layout_kosong.setVisibility(View.VISIBLE);
+                                    btn_dwonload.setVisibility(View.GONE);
                                 }
                             }
                             else{
+                                btn_dwonload.setVisibility(View.GONE);
                                 Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
                             }
                         }
