@@ -138,6 +138,7 @@ public class SlipGaji extends Fragment {
                 startActivity(intent);*//*
                 downloadFile(link);
                 new DownloadFileFromURL().execute(link);*/
+
                 dwonloadPDF();
 
             }
