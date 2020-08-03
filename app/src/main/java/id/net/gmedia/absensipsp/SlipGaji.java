@@ -253,8 +253,8 @@ public class SlipGaji extends Fragment {
                                 }
                             }
                             else{
-                               /* btn_dwonload.setVisibility(View.GONE);
-                                Toast.makeText(context, message, Toast.LENGTH_SHORT).show();*/
+                                btn_dwonload.setVisibility(View.GONE);
+                                Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
                             }
                         }
                         catch (JSONException e){
