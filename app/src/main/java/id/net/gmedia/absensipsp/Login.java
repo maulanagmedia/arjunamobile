@@ -187,6 +187,7 @@ public class Login extends AppCompatActivity {
         JSONBuilder body = new JSONBuilder();
         body.add("username", NIK.getText().toString());
         body.add("password", password.getText().toString());
+        body.add("android_version", String.valueOf(android.os.Build.VERSION.SDK_INT));
         body.add("imei", new JSONArray(IMEIManager.getIMEI(this)));
 
         ApiVolleyManager.getInstance().addSecureRequest(this, Constant.urlLogin, ApiVolleyManager.METHOD_POST,
