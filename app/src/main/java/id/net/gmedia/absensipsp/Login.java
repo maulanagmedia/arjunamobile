@@ -1,7 +1,10 @@
 package id.net.gmedia.absensipsp;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.Dialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -26,6 +29,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +40,9 @@ import com.leonardus.irfan.JSONBuilder;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Login extends AppCompatActivity {
 
@@ -50,6 +57,12 @@ public class Login extends AppCompatActivity {
     private ImageView img_visible;
     private boolean password_visible = false;
 
+    private List<String> listImei = new ArrayList<>();
+    private LinearLayout llID1, llID2;
+    private TextView tvId1, tvId2;
+    private ImageView ivCopy1, ivCopy2;
+    private Activity activity;
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +70,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.login);
 
         MainActivity.dashboard_fragment_active = true;
+        activity = this;
         session = new SessionManager(getApplicationContext());
         if (android.os.Build.VERSION.SDK_INT >= 21) {
             Window window = this.getWindow();
@@ -70,6 +84,44 @@ public class Login extends AppCompatActivity {
         password = findViewById(R.id.password);
         login = findViewById(R.id.login);
         img_visible = findViewById(R.id.img_visible);
+
+        llID1 = (LinearLayout) findViewById(R.id.ll_id1);
+        llID2 = (LinearLayout) findViewById(R.id.ll_id2);
+        tvId1 = (TextView) findViewById(R.id.tv_id1);
+        tvId2 = (TextView) findViewById(R.id.tv_id2);
+        ivCopy1 = (ImageView) findViewById(R.id.iv_copy1);
+        ivCopy2 = (ImageView) findViewById(R.id.iv_copy2);
+
+        listImei = IMEIManager.getIMEI(this);
+
+        tvId1.setText(listImei.get(0));
+        ivCopy1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("ID 1", tvId1.getText().toString().replaceAll("[,.]", ""));
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(activity, "Id 1 disimpan di clipboard", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        if(listImei.size() > 1){
+
+            tvId2.setText(listImei.get(1));
+            ivCopy2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                    ClipData clip = ClipData.newPlainText("ID 2", tvId2.getText().toString().replaceAll("[,.]", ""));
+                    clipboard.setPrimaryClip(clip);
+                    Toast.makeText(activity, "Id 2 disimpan di clipboard", Toast.LENGTH_LONG).show();
+                }
+            });
+        }else{
+            llID2.setVisibility(View.GONE);
+        }
 
         View layoutLogin = findViewById(R.id.layoutLogin);
         layoutLogin.setOnClickListener(new View.OnClickListener() {
