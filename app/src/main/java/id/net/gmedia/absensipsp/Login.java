@@ -19,6 +19,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.text.InputType;
 import android.text.method.PasswordTransformationMethod;
@@ -63,6 +64,13 @@ public class Login extends AppCompatActivity {
     private ImageView ivCopy1, ivCopy2;
     private Activity activity;
 
+    private String[] appPermission =  {
+            Manifest.permission.READ_PHONE_STATE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.ACCESS_NETWORK_STATE
+    };
+    private final int PERMIOSSION_REQUEST_CODE = 1111;
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,9 +100,7 @@ public class Login extends AppCompatActivity {
         ivCopy1 = (ImageView) findViewById(R.id.iv_copy1);
         ivCopy2 = (ImageView) findViewById(R.id.iv_copy2);
 
-        listImei = IMEIManager.getIMEI(this);
 
-        tvId1.setText(listImei.get(0));
         ivCopy1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,23 +111,6 @@ public class Login extends AppCompatActivity {
                 Toast.makeText(activity, "Id 1 disimpan di clipboard", Toast.LENGTH_LONG).show();
             }
         });
-
-        if(listImei.size() > 1){
-
-            tvId2.setText(listImei.get(1));
-            ivCopy2.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
-                    ClipData clip = ClipData.newPlainText("ID 2", tvId2.getText().toString().replaceAll("[,.]", ""));
-                    clipboard.setPrimaryClip(clip);
-                    Toast.makeText(activity, "Id 2 disimpan di clipboard", Toast.LENGTH_LONG).show();
-                }
-            });
-        }else{
-            llID2.setVisibility(View.GONE);
-        }
 
         View layoutLogin = findViewById(R.id.layoutLogin);
         layoutLogin.setOnClickListener(new View.OnClickListener() {
@@ -337,6 +326,57 @@ public class Login extends AppCompatActivity {
                 }
             }, 2000);
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        //permission
+        if (checkPermission()){
+
+            // diijinkan
+            listImei = IMEIManager.getIMEI(this);
+            tvId1.setText(listImei.get(0));
+
+            if(listImei.size() > 1){
+
+                tvId2.setText(listImei.get(1));
+                ivCopy2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                        ClipData clip = ClipData.newPlainText("ID 2", tvId2.getText().toString().replaceAll("[,.]", ""));
+                        clipboard.setPrimaryClip(clip);
+                        Toast.makeText(activity, "Id 2 disimpan di clipboard", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }else{
+                llID2.setVisibility(View.GONE);
+            }
+        }
+    }
+
+    private boolean checkPermission(){
+
+        List<String> permissionList = new ArrayList<>();
+        for (String perm : appPermission) {
+
+            if (ContextCompat.checkSelfPermission(activity, perm) != PackageManager.PERMISSION_GRANTED){
+
+                permissionList.add(perm);
+            }
+        }
+
+        if (!permissionList.isEmpty()) {
+
+            ActivityCompat.requestPermissions(activity, permissionList.toArray(new String[permissionList.size()]), PERMIOSSION_REQUEST_CODE);
+
+            return  false;
+        }
+
+        return  true;
     }
 
     @Override
