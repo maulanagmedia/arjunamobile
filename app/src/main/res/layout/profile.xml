@@ -108,6 +108,22 @@
                         android:text="Tanggal masuk"
                         android:textColor="#000000"
                         android:textSize="@dimen/sp12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="No. BPJS KS"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/sp12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="No. BPJS TK"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/sp12" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -119,6 +135,22 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/sp12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text=":"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/sp12" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
                         android:text=":"
                         android:textColor="#000000"
                         android:textSize="@dimen/sp12" />
@@ -259,6 +291,22 @@
 
                     <TextView
                         android:id="@+id/tglMasuk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/sp12" />
+
+                    <TextView
+                        android:id="@+id/no_bpjsKS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/sp12" />
+
+                    <TextView
+                        android:id="@+id/no_bpjsTK"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"

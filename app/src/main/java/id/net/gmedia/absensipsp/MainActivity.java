@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity
                     R.drawable.drawer_userguide,
                     R.drawable.drawer_about,
                     R.drawable.setting,
+                    R.drawable.id_card,
                     R.drawable.drawer_logout
             };
     public final String[] textIcon=
@@ -131,6 +132,7 @@ public class MainActivity extends AppCompatActivity
                     "User Guide",
                     "About",
                     "Ganti Password",
+                    "ID Card",
                     "Logout"
             };
     private boolean doubleBackToExitPressedOnce = false;
@@ -271,6 +273,9 @@ public class MainActivity extends AppCompatActivity
                         loadFragment(new ChangePSW(), "Ganti Password");
                         break;
                     case 16:
+                        loadFragment(new FragmentIDCard(), "ID Card");
+                        break;
+                    case 17:
                         SessionManager session = new SessionManager(getApplicationContext());
                         session.logoutUser();
                         finish();

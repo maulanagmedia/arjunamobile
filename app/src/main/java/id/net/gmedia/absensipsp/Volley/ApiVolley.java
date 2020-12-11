@@ -181,6 +181,7 @@ public class ApiVolley {
                             hostname.equalsIgnoreCase("api.crashlytics.com") ||
                             hostname.equalsIgnoreCase("settings.crashlytics.com") ||
                             hostname.equalsIgnoreCase("office.putmasaripratama.co.id") ||
+                            hostname.equalsIgnoreCase("putmasaripratama.co.id") ||
                             hostname.equalsIgnoreCase("clients4.google.com") ||
                             hostname.equalsIgnoreCase("www.facebook.com") ||
                             hostname.equalsIgnoreCase("www.instagram.com") ||

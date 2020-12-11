@@ -27,7 +27,7 @@ public class Profile extends Fragment {
     private Context context;
     private TextView nik, nama, noKTP, tempatLahir, tgl_lahir, agama, jenisKelamin, golonganDarah, telephone,
             email, alamat, status_menikah, bank, noRek, pendidikanTerakhir, namaSekolah, jurusan,
-            thnLulus, noAbsen, cabang, divisi, bagian, jabatan, statusKaryawan, departmen, tgl_masuk;
+            thnLulus, noAbsen, cabang, divisi, bagian, jabatan, statusKaryawan, departmen, tgl_masuk, no_bpjsKS, no_bpjsTK;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup viewGroup, Bundle savedInstanceState) {
         View view = inflater.inflate(id.net.gmedia.absensipsp.R.layout.profile, viewGroup, false);
@@ -61,6 +61,8 @@ public class Profile extends Fragment {
         statusKaryawan = view.findViewById(id.net.gmedia.absensipsp.R.id.statusKaryawan);
         departmen = view.findViewById(id.net.gmedia.absensipsp.R.id.departmen);
         tgl_masuk = view.findViewById(id.net.gmedia.absensipsp.R.id.tglMasuk);
+        no_bpjsKS = view.findViewById(R.id.no_bpjsKS);
+        no_bpjsTK = view.findViewById(R.id.no_bpjsTK);
 
         prepareDataProfile();
         return view;
@@ -102,6 +104,8 @@ public class Profile extends Fragment {
                                 statusKaryawan.setText(profile.getString("status_karyawan"));
                                 departmen.setText(profile.getString("departemen"));
                                 tgl_masuk.setText(profile.getString("tgl_masuk"));
+                                no_bpjsKS.setText(profile.getString("no_bpjsks"));
+                                no_bpjsTK.setText(profile.getString("no_bpjstk"));
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
